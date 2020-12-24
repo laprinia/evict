@@ -4,6 +4,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    public Animator Animator;
     public NavMeshAgent agent;
     public Transform[] waypoints;
     private int currentWaypoint = 0;
@@ -28,18 +29,18 @@ public class Enemy : MonoBehaviour
         {
             FaceTarget();
             agent.SetDestination(target.position);
-            GetComponent<Animator>().SetTrigger("walkTrigger");
+            Animator.SetTrigger("walkTrigger");
             if (distance <= attackRadius && Time.time >= attackTimeStamp)
             {
                 attackTimeStamp = Time.time + attackCoolDown;
-                GetComponent<Animator>().SetTrigger("scanTrigger");
+                Animator.SetTrigger("scanTrigger");
                 //todo attack player
             }
         }
         else if (Time.time >= walkTimeStamp)
         {
             
-            GetComponent<Animator>().SetTrigger("walkingTrigger");
+            Animator.SetTrigger("walkingTrigger");
             currentWaypoint++;
             if (currentWaypoint == waypoints.Length)
             {

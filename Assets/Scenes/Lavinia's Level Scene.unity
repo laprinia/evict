@@ -334,7 +334,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50.000004, y: 193.946, z: 0}
 --- !u!1 &584999950
 GameObject:
@@ -543,6 +543,84 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 190.57799, z: 0}
+--- !u!1 &1840508987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1840508988}
+  - component: {fileID: 1840508990}
+  - component: {fileID: 1840508989}
+  m_Layer: 0
+  m_Name: Nora Bot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1840508988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840508987}
+  m_LocalRotation: {x: 0, y: 0.039085392, z: 0, w: 0.99923587}
+  m_LocalPosition: {x: -11.370012, y: 1.4, z: -0.39762473}
+  m_LocalScale: {x: 0.40000013, y: 0.4, z: 0.40000013}
+  m_Children:
+  - {fileID: 543450652886725378}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 4.48, z: 0}
+--- !u!195 &1840508989
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840508987}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &1840508990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840508987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eed9274434d4a44cb566acdfda69e06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 821630187}
+  agent: {fileID: 1840508989}
+  waypoints:
+  - {fileID: 2055455562}
+  - {fileID: 1337301352}
+  - {fileID: 101861027}
+  viewRadius: 10
+  attackRadius: 2
+  attackCoolDown: 3
+  walkCoolDown: 12
+  target: {fileID: 1769998238}
 --- !u!1 &1861697760
 GameObject:
   m_ObjectHideFlags: 0
@@ -2414,9 +2492,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148902144440}
-  m_LocalRotation: {x: -0, y: 0.7510523, z: -0, w: 0.6602428}
-  m_LocalPosition: {x: -11.370012, y: 1.4, z: -0.39762473}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalRotation: {x: -0, y: 0.72467256, z: -0, w: 0.6890934}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1209922838339096077}
   - {fileID: 8879528567536329628}
@@ -2436,8 +2514,8 @@ Transform:
   - {fileID: 6946642995641343070}
   - {fileID: 5515375866617488232}
   - {fileID: 6341185920228459605}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 1840508988}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 97.36301, z: 0}
 --- !u!4 &543450653679833322
 Transform:
@@ -2473,7 +2551,7 @@ Transform:
   - {fileID: 4211463283380008831}
   - {fileID: 3445476734023335100}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &550546866663635553
 Transform:
@@ -3847,8 +3925,6 @@ GameObject:
   m_Component:
   - component: {fileID: 543450652886725378}
   - component: {fileID: 821630187}
-  - component: {fileID: 919132148902144442}
-  - component: {fileID: 919132148902144441}
   m_Layer: 0
   m_Name: Nora Bot
   m_TagString: Untagged
@@ -3856,50 +3932,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &919132148902144441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148902144440}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eed9274434d4a44cb566acdfda69e06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 919132148902144442}
-  waypoints:
-  - {fileID: 2055455562}
-  - {fileID: 1337301352}
-  - {fileID: 101861027}
-  viewRadius: 9
-  attackRadius: 2
-  attackCoolDown: 3
-  walkCoolDown: 5
-  target: {fileID: 1769998238}
---- !u!195 &919132148902144442
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148902144440}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 4
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &919132149208713808
 GameObject:
   m_ObjectHideFlags: 0
@@ -3918,7 +3950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &919132149208713809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3931,6 +3963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eed9274434d4a44cb566acdfda69e06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Animator: {fileID: 1944642702}
   agent: {fileID: 919132149208713810}
   waypoints:
   - {fileID: 2055455562}
@@ -18964,7 +18997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &5161879611885690479
 MeshFilter:
   m_ObjectHideFlags: 0

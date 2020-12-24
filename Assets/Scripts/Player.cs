@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : PortalTraveller
 {
     public float speed = 5.0f;
     public float jumpHeight = 10;
