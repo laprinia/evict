@@ -7,7 +7,10 @@ public class MainCamera : MonoBehaviour {
     void Awake () {
         portals = FindObjectsOfType<Portal> ();
     }
-
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     void OnPreCull () {
 
         for (int i = 0; i < portals.Length; i++) {

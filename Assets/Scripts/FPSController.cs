@@ -34,6 +34,9 @@ public class FPSController : PortalTraveller {
     float lastGroundedTime;
     bool disabled;
 
+    public Animator animator;
+    bool alreadyIdle = true;
+
     void Start () {
         cam = Camera.main;
         if (lockCursor) {
@@ -50,6 +53,9 @@ public class FPSController : PortalTraveller {
     }
 
     void Update () {
+        animator.ResetTrigger("walk");
+        animator.ResetTrigger("notWalk");
+
         if (Input.GetKeyDown (KeyCode.P)) {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -110,6 +116,31 @@ public class FPSController : PortalTraveller {
 
         transform.eulerAngles = Vector3.up * smoothYaw;
         cam.transform.localEulerAngles = Vector3.right * smoothPitch;
+
+        if (Input.GetKeyDown(KeyCode.W)) {
+            animator.SetTrigger("walk");
+            alreadyIdle = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.A)) {
+            animator.SetTrigger("walkLeft");
+            alreadyIdle = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.S)) {
+            animator.SetTrigger("walkBack");
+            alreadyIdle = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.D)) {
+            animator.SetTrigger("walkRight");
+            alreadyIdle = false;
+        }
+
+        if (Input.GetAxisRaw("Vertical") == 0 && Input.GetAxisRaw("Horizontal") == 0 && alreadyIdle == false) {
+            animator.SetTrigger("notWalk");
+            alreadyIdle = true;
+        }
 
     }
 
