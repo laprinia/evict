@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering.PostProcessing;
 
-public class RangedEnemy : PortalTraveller
+public class LaserEnemy : PortalTraveller
 {
+    
     public float movementSpeed = 6.0f;
     public Transform centerOfPlayer;
     public Transform eyePosition;
@@ -63,7 +64,7 @@ public class RangedEnemy : PortalTraveller
                    
                     if (hit.collider && hit.transform.tag.Equals("Player"))
                     {   
-                        
+                        Debug.Log("Got hit");
                         lineRenderer.SetPosition(1, hit.point);
                         StartCoroutine(StopLaserCoroutine());
                         //todo attack player

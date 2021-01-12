@@ -283,7 +283,7 @@ public class Portal : MonoBehaviour {
     }
 
     void OnTriggerEnter (Collider other) {
-        Debug.Log("Collided w "+other.name);
+        
         if (!colliders.Contains(other)) { colliders.Add(other); }
         if(other.gameObject.tag == "Player") {
             foreach(Collider collider in colliders) {
@@ -292,7 +292,7 @@ public class Portal : MonoBehaviour {
                 }
             }
             var traveller = other.GetComponent<PortalTraveller> ();
-            Debug.Log("Traveller: "+traveller+" coomponent: "+other.name);
+            Debug.Log("Traveller: "+traveller+" component: "+other.name);
             if (traveller) {
                 OnTravellerEnterPortal (traveller);
             

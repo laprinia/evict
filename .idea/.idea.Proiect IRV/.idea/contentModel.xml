@@ -40,13 +40,13 @@
           <e p="CreatePortal.cs" t="Include" />
           <e p="FPSController.cs" t="Include" />
           <e p="GUIManager.cs" t="Include" />
+          <e p="LaserEnemy.cs" t="Include" />
           <e p="MainCamera.cs" t="Include" />
           <e p="MainMenu.cs" t="Include" />
           <e p="MeleeEnemy.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="Portal.cs" t="Include" />
           <e p="PortalTraveller.cs" t="Include" />
-          <e p="RangedEnemy.cs" t="Include" />
           <e p="Shaders" t="Include">
             <e p="Portal.shader" t="Include" />
             <e p="Slice.shader" t="Include" />

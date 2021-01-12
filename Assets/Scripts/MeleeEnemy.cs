@@ -5,8 +5,9 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class MeleeEnemy : PortalTraveller
 {
+    public float movementSpeed = 1.0f;
     public Animator Animator;
-    public NavMeshAgent agent;
+    //public NavMeshAgent agent;
     public Transform[] waypoints;
     private int currentWaypoint = 0;
     public float viewRadius = 5;
@@ -25,13 +26,20 @@ public class MeleeEnemy : PortalTraveller
 
     private void Update()
     {
-        
+        //agent.enabled = false;
         float distance = Vector3.Distance(target.position, transform.position);
         if (distance <= viewRadius)
         {
-            FaceTarget();
-            agent.SetDestination(target.position);
-            Animator.SetTrigger("walkTrigger");
+            FaceTarget(target);
+            //agent.enabled = true;
+            //agent.SetDestination(target.position);
+            if (distance >= 2)
+            {
+                Animator.SetTrigger("walkingTrigger");
+                transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime*movementSpeed);
+                
+            }
+            
             if (distance <= attackRadius && Time.time >= attackTimeStamp)
             {
                 attackTimeStamp = Time.time + attackCoolDown;
@@ -41,22 +49,23 @@ public class MeleeEnemy : PortalTraveller
         }
         else if (Time.time >= walkTimeStamp)
         {
-            
-            Animator.SetTrigger("walkingTrigger");
+            //agent.enabled = true;
+          //  Animator.SetTrigger("walkingTrigger");
             currentWaypoint++;
             if (currentWaypoint == waypoints.Length)
             {
                 currentWaypoint = 0;
             }
 
-            agent.SetDestination(waypoints[currentWaypoint].position);
+            //agent.SetDestination(waypoints[currentWaypoint].position);
+            
             walkTimeStamp = Time.time + walkCoolDown;
         }
     }
 
-    void FaceTarget()
+    void FaceTarget(Transform currentTarget)
     {
-        Vector3 direction = (target.position - transform.position).normalized;
+        Vector3 direction = (currentTarget.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
