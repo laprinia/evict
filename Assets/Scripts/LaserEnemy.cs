@@ -6,7 +6,7 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class LaserEnemy : PortalTraveller
 {
-    
+    public Vector3 lastPosition = Vector3. zero;
     public float movementSpeed = 6.0f;
     public Transform centerOfPlayer;
     public Transform eyePosition;
@@ -32,6 +32,7 @@ public class LaserEnemy : PortalTraveller
 
     private void Start()
     {
+        lastPosition = transform.position;
         lineRenderer.startWidth = 0.1f;
         lineRenderer.endWidth = 0.1f;
 
@@ -44,7 +45,6 @@ public class LaserEnemy : PortalTraveller
         if (distance <= viewRadius)
         {
             FaceTarget(target);
-            //agent.SetDestination(target.position);
             if (distance >= 4)
             {
                 transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime*movementSpeed);
@@ -61,46 +61,40 @@ public class LaserEnemy : PortalTraveller
                 Ray ray = new Ray(eyePosition.transform.position, eyePosition.transform.forward);
                 if (Physics.Raycast(ray,out hit))
                 {
-                   
                     if (hit.collider && hit.transform.tag.Equals("Player"))
-                    {   
-                        Debug.Log("Got hit");
+                    {
                         lineRenderer.SetPosition(1, hit.point);
                         StartCoroutine(StopLaserCoroutine());
                         //todo attack player
                     } 
                     attackTimeStamp = Time.time + attackCoolDown;
                 }
-                
-                
             }
-            
         }
         else if (Time.time >= walkTimeStamp)
         {
-            if (!Animator.GetBool("isWalking"))
-            {
-                Animator.SetBool("isWalking",true);
-            }
-
+            
             if (currentWaypoint == waypoints.Length)
             {
                 currentWaypoint = 0;
             }
 
-            //agent.SetDestination(waypoints[currentWaypoint].position);
-  
             FaceTarget(waypoints[currentWaypoint]);
             transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].transform.position, Time.deltaTime*movementSpeed);
             if (transform.position == waypoints[currentWaypoint].transform.position)
             {
-                Animator.SetBool("isWalking",false);
+            
                 walkTimeStamp = Time.time + walkCoolDown;
                 currentWaypoint++;
             }
-            
-            
         }
+    }
+
+    private void FixedUpdate()
+    {
+        float currentSpeed = (transform. position - lastPosition).magnitude;
+        Animator.SetFloat("speed",currentSpeed);
+        lastPosition = transform. position;
     }
 
     IEnumerator StopLaserCoroutine()

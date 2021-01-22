@@ -20,8 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d423d3a9-54d1-4c45-9b6f-35f9efc27d38" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Proiect IRV/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Proiect IRV/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Proiect IRV/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Proiect IRV/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Proiect IRV/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Proiect IRV/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Nora/Animator Controllers/Nora Animator Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Nora/Animator Controllers/Nora Animator Controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Ralph/Animation Controllers/Ralph Animator Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Ralph/Animation Controllers/Ralph Animator Controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Ralph/Armature_Walk.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Ralph/Armature_Walk.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation/Ralph/Idle.002.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Ralph/Idle.002.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Stefan's Level Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Stefan's Level Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LaserEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LaserEnemy.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +45,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RangedEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Portal.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LaserEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MeleeEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LaserEnemy.cs" />
       </list>
     </option>
   </component>
@@ -96,6 +102,7 @@
       <workItem from="1610446793024" duration="3983000" />
       <workItem from="1610451914335" duration="6507000" />
       <workItem from="1610472547909" duration="730000" />
+      <workItem from="1611324094375" duration="1545000" />
     </task>
     <servers />
   </component>
