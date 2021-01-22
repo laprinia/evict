@@ -46,37 +46,30 @@ public class Portal : MonoBehaviour {
             Vector3 offsetFromPortal = travellerT.position - transform.position;
             int portalSide = System.Math.Sign (Vector3.Dot (offsetFromPortal, transform.forward));
             int portalSideOld = System.Math.Sign (Vector3.Dot (traveller.previousOffsetFromPortal, transform.forward));
-            // Teleport the traveller if it has crossed from one side of the portal to the other
+            // teleporteaza jucatoruld daca a trecut de o parte pe celalata a portalului
             if (portalSide != portalSideOld) {
                 var positionOld = travellerT.position;
                 var rotOld = travellerT.rotation;
                 traveller.Teleport (transform, linkedPortal.transform, m.GetColumn (3), m.rotation);
                 traveller.graphicsClone.transform.SetPositionAndRotation (positionOld, rotOld);
-                // Can't rely on OnTriggerEnter/Exit to be called next frame since it depends on when FixedUpdate runs
                 linkedPortal.OnTravellerEnterPortal (traveller);
                 trackedTravellers.RemoveAt (i);
                 i--;
 
             } else {
                 traveller.graphicsClone.transform.SetPositionAndRotation (m.GetColumn (3), m.rotation);
-                //UpdateSliceParams (traveller);
                 traveller.previousOffsetFromPortal = offsetFromPortal;
             }
         }
     }
 
-    // Called before any portal cameras are rendered for the current frame
     public void PrePortalRender () {
         foreach (var traveller in trackedTravellers) {
             UpdateSliceParams (traveller);
         }
     }
 
-    // Manually render the camera attached to this portal
-    // Called after PrePortalRender, and before PostPortalRender
     public void Render () {
-
-        // Skip rendering the view from this portal if player is not looking at the linked portal
         if (!CameraUtility.VisibleFromCamera (linkedPortal.screen, playerCam)) {
             return;
         }
@@ -91,7 +84,6 @@ public class Portal : MonoBehaviour {
         portalCam.projectionMatrix = playerCam.projectionMatrix;
         for (int i = 0; i < recursionLimit; i++) {
             if (i > 0) {
-                // No need for recursive rendering if linked portal is not visible through this portal
                 if (!CameraUtility.BoundsOverlap (screenMeshFilter, linkedPortal.screenMeshFilter, portalCam)) {
                     break;
                 }
@@ -105,7 +97,6 @@ public class Portal : MonoBehaviour {
             startIndex = renderOrderIndex;
         }
 
-        // Hide screen so that camera can see through portal
         screen.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
         linkedPortal.screen.material.SetInt ("displayMask", 0);
 
@@ -120,31 +111,21 @@ public class Portal : MonoBehaviour {
             }
         }
 
-        // Unhide objects hidden at start of render
         screen.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
     }
 
     void HandleClipping () {
-        // There are two main graphical issues when slicing travellers
-        // 1. Tiny sliver of mesh drawn on backside of portal
-        //    Ideally the oblique clip plane would sort this out, but even with 0 offset, tiny sliver still visible
-        // 2. Tiny seam between the sliced mesh, and the rest of the model drawn onto the portal screen
-        // This function tries to address these issues by modifying the slice parameters when rendering the view from the portal
-        // Would be great if this could be fixed more elegantly, but this is the best I can figure out for now
         const float hideDst = -1000;
         const float showDst = 1000;
         float screenThickness = linkedPortal.ProtectScreenFromClipping (portalCam.transform.position);
 
         foreach (var traveller in trackedTravellers) {
             if (SameSideOfPortal (traveller.transform.position, portalCamPos)) {
-                // Addresses issue 1
                 traveller.SetSliceOffsetDst (hideDst, false);
             } else {
-                // Addresses issue 2
                 traveller.SetSliceOffsetDst (showDst, false);
             }
 
-            // Ensure clone is properly sliced, in case it's visible through this portal:
             int cloneSideOfLinkedPortal = -SideOfPortal (traveller.transform.position);
             bool camSameSideAsClone = linkedPortal.SideOfPortal (portalCamPos) == cloneSideOfLinkedPortal;
             if (camSameSideAsClone) {
@@ -158,17 +139,13 @@ public class Portal : MonoBehaviour {
         foreach (var linkedTraveller in linkedPortal.trackedTravellers) {
             var travellerPos = linkedTraveller.graphicsObject.transform.position;
             var clonePos = linkedTraveller.graphicsClone.transform.position;
-            // Handle clone of linked portal coming through this portal:
             bool cloneOnSameSideAsCam = linkedPortal.SideOfPortal (travellerPos) != SideOfPortal (portalCamPos);
             if (cloneOnSameSideAsCam) {
-                // Addresses issue 1
                 linkedTraveller.SetSliceOffsetDst (hideDst, true);
             } else {
-                // Addresses issue 2
                 linkedTraveller.SetSliceOffsetDst (showDst, true);
             }
 
-            // Ensure traveller of linked portal is properly sliced, in case it's visible through this portal:
             bool camSameSideAsTraveller = linkedPortal.SameSideOfPortal (linkedTraveller.transform.position, portalCamPos);
             if (camSameSideAsTraveller) {
                 linkedTraveller.SetSliceOffsetDst (screenThickness, false);
@@ -178,7 +155,6 @@ public class Portal : MonoBehaviour {
         }
     }
 
-    // Called once all portals have been rendered, but before the player camera renders
     public void PostPortalRender () {
         foreach (var traveller in trackedTravellers) {
             UpdateSliceParams (traveller);
@@ -191,14 +167,11 @@ public class Portal : MonoBehaviour {
                 viewTexture.Release ();
             }
             viewTexture = new RenderTexture (Screen.width, Screen.height, 0);
-            // Render the view from the portal camera to the view texture
             portalCam.targetTexture = viewTexture;
-            // Display the view texture on the screen of the linked portal
             linkedPortal.screen.material.SetTexture ("_MainTex", viewTexture);
         }
     }
 
-    // Sets the thickness of the portal screen so as not to clip with camera near plane when player goes through
     float ProtectScreenFromClipping (Vector3 viewPoint) {
         float halfHeight = playerCam.nearClipPlane * Mathf.Tan (playerCam.fieldOfView * 0.5f * Mathf.Deg2Rad);
         float halfWidth = halfHeight * playerCam.aspect;
@@ -213,16 +186,15 @@ public class Portal : MonoBehaviour {
     }
 
     void UpdateSliceParams (PortalTraveller traveller) {
-        // Calculate slice normal
+        // calcul normale de slice
         int side = SideOfPortal (traveller.transform.position);
         Vector3 sliceNormal = transform.forward * -side;
         Vector3 cloneSliceNormal = linkedPortal.transform.forward * side;
 
-        // Calculate slice centre
+        // calcularea centrului de slice
         Vector3 slicePos = transform.position;
         Vector3 cloneSlicePos = linkedPortal.transform.position;
 
-        // Adjust slice offset so that when player standing on other side of portal to the object, the slice doesn't clip through
         float sliceOffsetDst = 0;
         float cloneSliceOffsetDst = 0;
         float screenThickness = screen.transform.localScale.z;
@@ -236,7 +208,6 @@ public class Portal : MonoBehaviour {
             cloneSliceOffsetDst = -screenThickness;
         }
 
-        // Apply parameters
         for (int i = 0; i < traveller.originalMaterials.Length; i++) {
             traveller.originalMaterials[i].SetVector ("sliceCentre", slicePos);
             traveller.originalMaterials[i].SetVector ("sliceNormal", sliceNormal);
@@ -250,11 +221,7 @@ public class Portal : MonoBehaviour {
 
     }
 
-    // Use custom projection matrix to align portal camera's near clip plane with the surface of the portal
-    // Note that this affects precision of the depth buffer, which can cause issues with effects like screenspace AO
     void SetNearClipPlane () {
-        // Learning resource:
-        // http://www.terathon.com/lengyel/Lengyel-Oblique.pdf
         Transform clipPlane = transform;
         int dot = System.Math.Sign (Vector3.Dot (clipPlane.forward, transform.position - portalCam.transform.position));
 
@@ -262,12 +229,9 @@ public class Portal : MonoBehaviour {
         Vector3 camSpaceNormal = portalCam.worldToCameraMatrix.MultiplyVector (clipPlane.forward) * dot;
         float camSpaceDst = -Vector3.Dot (camSpacePos, camSpaceNormal) + nearClipOffset;
 
-        // Don't use oblique clip plane if very close to portal as it seems this can cause some visual artifacts
         if (Mathf.Abs (camSpaceDst) > nearClipLimit) {
             Vector4 clipPlaneCameraSpace = new Vector4 (camSpaceNormal.x, camSpaceNormal.y, camSpaceNormal.z, camSpaceDst);
 
-            // Update projection based on new clip plane
-            // Calculate matrix with player cam so that player camera settings (fov, etc) are used
             portalCam.projectionMatrix = playerCam.CalculateObliqueMatrix (clipPlaneCameraSpace);
         } else {
             portalCam.projectionMatrix = playerCam.projectionMatrix;
@@ -285,14 +249,17 @@ public class Portal : MonoBehaviour {
     void OnTriggerEnter (Collider other) {
         
         if (!colliders.Contains(other)) { colliders.Add(other); }
-        if(other.gameObject.tag == "Player") {
+        if(other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy") {
+            if(other.gameObject.tag == "Enemy") {
+                other.gameObject.GetComponent<LaserEnemy>().isTeleporting = true;
+            }
             foreach(Collider collider in colliders) {
                 if(collider.gameObject.tag == "SurfaceForPortal") {
-                    collider.enabled = false;
+                    Physics.IgnoreCollision(collider , other);
                 }
             }
             var traveller = other.GetComponent<PortalTraveller> ();
-            Debug.Log("Traveller: "+traveller+" component: "+other.name);
+            Debug.Log("Traveller: " + traveller+" component: " + other.name);
             if (traveller) {
                 OnTravellerEnterPortal (traveller);
             
@@ -303,10 +270,13 @@ public class Portal : MonoBehaviour {
 
     void OnTriggerExit (Collider other) {
         colliders.Remove(other);
-        if (other.gameObject.tag == "Player") {
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy") {
+            if (other.gameObject.tag == "Enemy") {
+                other.gameObject.GetComponent<LaserEnemy>().isTeleporting = false;
+            }
             foreach (Collider collider in colliders) {
                 if (collider.gameObject.tag == "SurfaceForPortal") {
-                    collider.enabled = true;
+                    Physics.IgnoreCollision(collider, other, false);
                 }
             }
         }
@@ -316,10 +286,6 @@ public class Portal : MonoBehaviour {
             trackedTravellers.Remove (traveller);
         }
     }
-
-    /*
-     ** Some helper/convenience stuff:
-     */
 
     int SideOfPortal (Vector3 pos) {
         return System.Math.Sign (Vector3.Dot (pos - transform.position, transform.forward));

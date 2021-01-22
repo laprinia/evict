@@ -10,6 +10,8 @@ public class PortalTraveller : MonoBehaviour {
     public Material[] originalMaterials { get; set; }
     public Material[] cloneMaterials { get; set; }
 
+    public bool isTeleporting = false;
+
     public virtual void Teleport (Transform fromPortal, Transform toPortal, Vector3 pos, Quaternion rot) {
         transform.position = pos;
         transform.rotation = rot;

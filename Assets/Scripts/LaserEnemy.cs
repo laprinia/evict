@@ -23,6 +23,11 @@ public class LaserEnemy : PortalTraveller
     public Transform target;
     private float attackTimeStamp = 0f;
     private float walkTimeStamp = 0f;
+    public float gravity = 18;
+
+    float verticalVelocity;
+    Vector3 velocity;
+    CharacterController controller;
 
     private void OnDrawGizmos()
     {
@@ -32,6 +37,7 @@ public class LaserEnemy : PortalTraveller
 
     private void Start()
     {
+        controller = GetComponent<CharacterController>();
         lastPosition = transform.position;
         lineRenderer.startWidth = 0.1f;
         lineRenderer.endWidth = 0.1f;
@@ -40,54 +46,53 @@ public class LaserEnemy : PortalTraveller
 
     private void Update()
     {
-        
+        verticalVelocity -= gravity * Time.deltaTime;
+        velocity = new Vector3(0, verticalVelocity, 0);
+
+        var flags = controller.Move(velocity * Time.deltaTime);
+        if (flags == CollisionFlags.Below) {
+            verticalVelocity = 0;
+        }
+
         float distance = Vector3.Distance(target.position, transform.position);
-        if (distance <= viewRadius)
-        {
+        if (distance <= viewRadius) {
             FaceTarget(target);
-            if (distance >= 4)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime*movementSpeed);
-                
+            if (distance >= 4) {
+                transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * movementSpeed);
+
             }
-            
+
             lineRenderer.SetPosition(0, eyePosition.transform.position);
-            
-            if (distance <= attackRadius && Time.time >= attackTimeStamp)
-            {
+
+            if (distance <= attackRadius && Time.time >= attackTimeStamp) {
                 RaycastHit hit;
                 Animator.SetBool("isWalking", false);
                 Animator.SetTrigger("scanTrigger");
                 Ray ray = new Ray(eyePosition.transform.position, eyePosition.transform.forward);
-                if (Physics.Raycast(ray,out hit))
-                {
-                    if (hit.collider && hit.transform.tag.Equals("Player"))
-                    {
+                if (Physics.Raycast(ray, out hit)) {
+                    if (hit.collider && hit.transform.tag.Equals("Player")) {
                         lineRenderer.SetPosition(1, hit.point);
                         StartCoroutine(StopLaserCoroutine());
-                        //todo attack player
-                    } 
+                        hit.collider.gameObject.GetComponent<Health>().DamagePlayer(25);
+                    }
                     attackTimeStamp = Time.time + attackCoolDown;
                 }
             }
-        }
-        else if (Time.time >= walkTimeStamp)
-        {
-            
-            if (currentWaypoint == waypoints.Length)
-            {
+        } else if (Time.time >= walkTimeStamp) {
+
+            if (currentWaypoint == waypoints.Length) {
                 currentWaypoint = 0;
             }
 
             FaceTarget(waypoints[currentWaypoint]);
-            transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].transform.position, Time.deltaTime*movementSpeed);
-            if (transform.position == waypoints[currentWaypoint].transform.position)
-            {
-            
+            transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].transform.position, Time.deltaTime * movementSpeed);
+            if (transform.position == waypoints[currentWaypoint].transform.position) {
+
                 walkTimeStamp = Time.time + walkCoolDown;
                 currentWaypoint++;
             }
         }
+        
     }
 
     private void FixedUpdate()
@@ -99,7 +104,7 @@ public class LaserEnemy : PortalTraveller
 
     IEnumerator StopLaserCoroutine()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         lineRenderer.SetPosition(1, eyePosition.transform.position);
     }
     void FaceTarget(Transform currentTarget)

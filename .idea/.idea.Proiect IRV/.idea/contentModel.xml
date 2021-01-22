@@ -30,6 +30,8 @@
             </e>
           </e>
         </e>
+        <e p="Health.cs" t="Include" />
+        <e p="HealthBar.cs" t="Include" />
         <e p="Models" t="Include">
           <e p="Car" t="Include">
             <e p="License.txt" t="Include" />
