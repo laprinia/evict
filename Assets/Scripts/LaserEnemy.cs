@@ -24,6 +24,8 @@ public class LaserEnemy : PortalTraveller
     private float attackTimeStamp = 0f;
     private float walkTimeStamp = 0f;
     public float gravity = 18;
+    public GameObject myself;
+    public Animator animator;
 
     float verticalVelocity;
     Vector3 velocity;
@@ -46,11 +48,19 @@ public class LaserEnemy : PortalTraveller
 
     private void Update()
     {
+        animator.SetBool("isShutDown", false);
         verticalVelocity -= gravity * Time.deltaTime;
         velocity = new Vector3(0, verticalVelocity, 0);
 
         var flags = controller.Move(velocity * Time.deltaTime);
         if (flags == CollisionFlags.Below) {
+            if(verticalVelocity < -8) {
+                this.enabled = false;
+                animator.SetBool("isShutDown", true);
+                animator.SetFloat("speed", 0);
+                StartCoroutine(Destroy(5));
+
+            }
             verticalVelocity = 0;
         }
 
@@ -93,6 +103,11 @@ public class LaserEnemy : PortalTraveller
             }
         }
         
+    }
+
+    IEnumerator Destroy(int interval) {
+        yield return new WaitForSeconds(interval);
+        Destroy(myself);
     }
 
     private void FixedUpdate()

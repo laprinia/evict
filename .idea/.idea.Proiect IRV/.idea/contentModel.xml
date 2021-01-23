@@ -7,6 +7,11 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="all" t="Include">
+          <e p="Lava shader" t="Include">
+            <e p="Lava.shader" t="Include" />
+          </e>
+        </e>
         <e p="AssetStoreOriginals" t="Include">
           <e p="_SNAPS_PrototypingAssets" t="Include">
             <e p="About" t="Include">
@@ -48,7 +53,13 @@
           <e p="MeleeEnemy.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="Portal.cs" t="Include" />
+          <e p="PortalLightCreepy.cs" t="Include" />
           <e p="PortalTraveller.cs" t="Include" />
+          <e p="SaveSystem" t="Include">
+            <e p="PlayerData.cs" t="Include" />
+            <e p="SavablePlayer.cs" t="Include" />
+            <e p="SaveSystem.cs" t="Include" />
+          </e>
           <e p="Shaders" t="Include">
             <e p="Portal.shader" t="Include" />
             <e p="Slice.shader" t="Include" />

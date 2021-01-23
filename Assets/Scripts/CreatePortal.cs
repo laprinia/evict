@@ -13,11 +13,13 @@ public class CreatePortal : MonoBehaviour
             ShootPortalA(leftClickPortal);
             leftClickPortal.transform.position = Vector3.MoveTowards(leftClickPortal.transform.position, player.transform.position, 0.03f);
             leftClickPortal.GetComponentInChildren<Animator>().Play("openDoors", -1, 0f);
+            leftClickPortal.GetComponent<Animator>().Play("SpawnPortal", -1, 0f);
         }
         else if (Input.GetMouseButtonDown(1)) {
             ShootPortalB(rightClickPortal);
             rightClickPortal.transform.position = Vector3.MoveTowards(rightClickPortal.transform.position, player.transform.position, 0.03f);
             rightClickPortal.GetComponentInChildren<Animator>().Play("openDoors", -1, 0f);
+            rightClickPortal.GetComponent<Animator>().Play("SpawnPortalB", -1, 0f);
         }
     }
 

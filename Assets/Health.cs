@@ -19,15 +19,27 @@ public class Health : MonoBehaviour
 
     public void DamagePlayer( int damage )
     {
-        curHealth -= damage;
+        if(curHealth >0){
+            curHealth -= damage;
 
-        healthBar.SetHealth( curHealth );
+            healthBar.SetHealth(curHealth);
+        }
+        else
+        {
+            //todo end game
+        }
     }
 
     public void HealPlayer(int heal)
     {
         curHealth += heal;
         healthBar.SetHealth(curHealth);
+    }
+
+    public void SetHealth(int amount)
+    {
+        curHealth = amount;
+        healthBar.SetHealth(amount);
     }
 }
 

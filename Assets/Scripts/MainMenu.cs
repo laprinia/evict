@@ -5,14 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame()
+    public void NewGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(LoadAsyncScene());
+        Debug.Log("new game");
     }
-
+    public void ContinueGame()
+    {
+       
+        Debug.Log("continue game");
+    }
     public void ExitGame()
     {
-        Debug.Log("EXIT!");
+        Debug.Log("exit");
         Application.Quit();
     }
+    
+    IEnumerator LoadAsyncScene()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Ovidiu");
+        
+
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
 }
+

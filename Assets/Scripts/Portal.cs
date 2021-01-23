@@ -250,9 +250,6 @@ public class Portal : MonoBehaviour {
         
         if (!colliders.Contains(other)) { colliders.Add(other); }
         if(other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy") {
-            if(other.gameObject.tag == "Enemy") {
-                other.gameObject.GetComponent<LaserEnemy>().isTeleporting = true;
-            }
             foreach(Collider collider in colliders) {
                 if(collider.gameObject.tag == "SurfaceForPortal") {
                     Physics.IgnoreCollision(collider , other);
@@ -271,9 +268,6 @@ public class Portal : MonoBehaviour {
     void OnTriggerExit (Collider other) {
         colliders.Remove(other);
         if (other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy") {
-            if (other.gameObject.tag == "Enemy") {
-                other.gameObject.GetComponent<LaserEnemy>().isTeleporting = false;
-            }
             foreach (Collider collider in colliders) {
                 if (collider.gameObject.tag == "SurfaceForPortal") {
                     Physics.IgnoreCollision(collider, other, false);
