@@ -6,27 +6,26 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class MeleeEnemy : PortalTraveller
 {
-    public Vector3 lastPosition = Vector3. zero;
+    public Vector3 lastPosition = Vector3.zero;
     public float movementSpeed = 6.0f;
 
     public Animator Animator;
-  
+
     public Transform[] waypoints;
     private int currentWaypoint = 0;
     public float viewRadius = 5;
     public float attackRadius = 3;
     public int attackCoolDown = 2;
-    public int walkCoolDown=5;
+    public int walkCoolDown = 5;
     public Transform target;
     private float attackTimeStamp = 0f;
     private float walkTimeStamp = 0f;
     public float gravity = 18;
     public GameObject myself;
     public Animator animator;
+    public GameObject heart;
 
-    float verticalVelocity;
-    Vector3 velocity;
-    CharacterController controller;
+    public Rigidbody rb;
 
     private void OnDrawGizmos()
     {
@@ -36,73 +35,65 @@ public class MeleeEnemy : PortalTraveller
 
     private void Start()
     {
-        controller = GetComponent<CharacterController>();
         lastPosition = transform.position;
+        rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
-    {
+    private void Update() {
+        float currentSpeed = (transform.position - lastPosition).magnitude;
+        Animator.SetFloat("speed", currentSpeed * 10);
+        lastPosition = transform.position;
+
         animator.SetBool("isShutDown", false);
-        verticalVelocity -= gravity * Time.deltaTime;
-        velocity = new Vector3(0, verticalVelocity, 0);
 
-        var flags = controller.Move(velocity * Time.deltaTime);
-        if (flags == CollisionFlags.Below) {
-            if(verticalVelocity < -8) {
-                this.enabled = false;
-                animator.SetBool("isShutDown", true);
-                animator.SetFloat("speed", 0);
-                StartCoroutine(Destroy(5));
-
-            }
-            verticalVelocity = 0;
+        if (rb.velocity.y < -8) {
+            this.enabled = false;
+            animator.SetBool("isShutDown", true);
+            animator.SetFloat("speed", 0);
+            StartCoroutine(Destroy(5));
         }
+
 
         float distance = Vector3.Distance(target.position, transform.position);
         if (distance <= viewRadius) {
             FaceTarget(target);
             if (distance >= 1) {
-                transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * movementSpeed);
+                transform.position = Vector3.MoveTowards(transform.position, target.position,
+                    Time.deltaTime * movementSpeed);
             }
-            
+
 
             if (distance <= attackRadius && Time.time >= attackTimeStamp) {
-                
                 Animator.SetTrigger("scanTrigger");
                 attackTimeStamp = Time.time + attackCoolDown;
                 target.GetComponent<Health>().DamagePlayer(25);
-                
             }
         } else if (Time.time >= walkTimeStamp) {
-
             if (currentWaypoint == waypoints.Length) {
                 currentWaypoint = 0;
             }
 
             FaceTarget(waypoints[currentWaypoint]);
-            transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypoint].transform.position, Time.deltaTime * movementSpeed);
-            if (Vector3.Distance(transform.position,waypoints[currentWaypoint].transform.position)<=0){
-
+            transform.position = Vector3.MoveTowards(transform.position,
+                waypoints[currentWaypoint].transform.position, Time.deltaTime * movementSpeed);
+            if (Vector3.Distance(transform.position, waypoints[currentWaypoint].transform.position) <= 0.2) {
                 walkTimeStamp = Time.time + walkCoolDown;
                 currentWaypoint++;
             }
         }
-        
     }
 
-    IEnumerator Destroy(int interval) {
+    IEnumerator Destroy(int interval)
+    {
         yield return new WaitForSeconds(interval);
+        Instantiate(heart, new Vector3(0, .5f, 0) + transform.position, Quaternion.identity);
         Destroy(myself);
     }
 
     private void FixedUpdate()
     {
-        float currentSpeed = (transform. position - lastPosition).magnitude;
-        Debug.Log(currentSpeed);
-        Animator.SetFloat("speed",currentSpeed*10);
-        lastPosition = transform. position;
     }
-    
+
     void FaceTarget(Transform currentTarget)
     {
         Vector3 direction = (currentTarget.position - transform.position).normalized;

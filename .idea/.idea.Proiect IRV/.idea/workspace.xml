@@ -24,33 +24,43 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Proiect IRV/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Proiect IRV/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animation/Nora/Animator Controllers/Nora Animator Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Nora/Animator Controllers/Nora Animator Controller.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animation/Ralph/Animation Controllers/Ralph Animator Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation/Ralph/Animation Controllers/Ralph Animator Controller.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/SciFi_Industrial/Materials/DarkGray_snaps002.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/SciFi_Industrial/Materials/DarkGray_snaps002.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/SciFi_Industrial/Materials/Gray_snaps002.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/SciFi_Industrial/Materials/Gray_snaps002.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/SciFi_Industrial/Materials/LightGray_snaps002.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetStoreOriginals/_SNAPS_PrototypingAssets/SciFi_Industrial/Materials/LightGray_snaps002.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Extras/sign/source/green.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Extras/sign/source/green.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Extras/portalObj/SpawnPortal.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Extras/portalObj/SpawnPortal.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Extras/portalObj/SpawnPortalB.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Extras/portalObj/SpawnPortalB.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Health.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Nora Bot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Nora Bot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PortalDoorA.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PortalDoorA.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PortalDoorB.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PortalDoorB.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ralph Bot 1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ralph Bot 1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ralph Bot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Ralph Bot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lavinia's Level Scene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lavinia's Level Scene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HealthBar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/light.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/light.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cloud Desert.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cloud Desert.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cloud.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Cloud.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ralph Bot.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ralph Bot.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Ovidiu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Ovidiu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Stefan's Level Scene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Stefan's Level Scene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatePortal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatePortal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FPSController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FPSController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LaserEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LaserEnemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MeleeEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MeleeEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Portal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Portal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PortalTraveller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PortalTraveller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/background.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/PlayerData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SavablePlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SavablePlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/all.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/all/Lava shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/all/Lava shader/Lava.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/all/Lava shader/Lava.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/all/Lava shader/Lava.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/all/Lava shader/Lava.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/all/Lava shader/Plane.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/all/Lava shader/Plane.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/all/Lava shader/wavesNormalMap.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/all/Lava shader/wavesNormalMap.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/all/Lava shader/wawesMap.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/all/Lava shader/wawesMap.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +73,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Health.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Load.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/PlayerData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -74,21 +85,25 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RangedEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Portal.cs" />
-        <option value="$PROJECT_DIR$/Assets/HealthBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MeleeEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LaserEnemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/PlayerData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveablePlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Health.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/PlayerData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/HealthBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Load.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SavablePlayer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Lava.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MeleeEnemy.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1m4KUpSlYJiulCrQxxaEu6w8dad" />
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -142,7 +157,11 @@
       <workItem from="1611324094375" duration="10857000" />
       <workItem from="1611401054578" duration="146000" />
       <workItem from="1611417239795" duration="6575000" />
-      <workItem from="1611427109937" duration="2514000" />
+      <workItem from="1611427109937" duration="3137000" />
+      <workItem from="1611431315863" duration="1251000" />
+      <workItem from="1611433990642" duration="6311000" />
+      <workItem from="1611596930336" duration="5329000" />
+      <workItem from="1611609035399" duration="1180000" />
     </task>
     <servers />
   </component>

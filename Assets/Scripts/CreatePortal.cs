@@ -30,8 +30,11 @@ public class CreatePortal : MonoBehaviour
         if (Physics.Raycast(rayOrigin, out hitInfo)) {
             if (hitInfo.collider.tag == "SurfaceForPortal") {
                 Quaternion findNormal = Quaternion.LookRotation(hitInfo.normal);
-                Debug.Log(hitInfo.transform.forward * 0.1f);
-                portal.transform.position = hitInfo.point; // + hitInfo.transform.forward * 0.1f;
+                if (findNormal.eulerAngles.x == 0) {
+                    portal.transform.position = new Vector3(hitInfo.point.x, hitInfo.collider.gameObject.GetComponent<Renderer>().bounds.center.y, hitInfo.point.z); // + hitInfo.transform.forward * 0.1f;
+                } else {
+                    portal.transform.position = hitInfo.point;
+                }
                 portal.transform.rotation = findNormal;
             }
         }
@@ -44,7 +47,11 @@ public class CreatePortal : MonoBehaviour
         if (Physics.Raycast(rayOrigin, out hitInfo)) {
             if (hitInfo.collider.tag == "SurfaceForPortal") {
                 Quaternion findNormal = Quaternion.LookRotation(hitInfo.normal);
-                portal.transform.position = hitInfo.point; // - hitInfo.transform.forward * 0.1f;
+                if (findNormal.eulerAngles.x == 0) {
+                    portal.transform.position = new Vector3(hitInfo.point.x, hitInfo.collider.gameObject.GetComponent<Renderer>().bounds.center.y, hitInfo.point.z); // + hitInfo.transform.forward * 0.1f;
+                } else {
+                    portal.transform.position = hitInfo.point;
+                }
                 portal.transform.rotation = findNormal;
 
                 Vector3 dirFromAtoB = (portal.transform.position - player.transform.position).normalized;

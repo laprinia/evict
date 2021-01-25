@@ -256,7 +256,6 @@ public class Portal : MonoBehaviour {
                 }
             }
             var traveller = other.GetComponent<PortalTraveller> ();
-            Debug.Log("Traveller: " + traveller+" component: " + other.name);
             if (traveller) {
                 OnTravellerEnterPortal (traveller);
             

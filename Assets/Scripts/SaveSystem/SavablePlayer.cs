@@ -6,7 +6,7 @@ public class SavablePlayer : MonoBehaviour
 {
    public void SaveCharacter()
    {
-      SaveSystem.SavePlayer(this.GetComponent<Player>());
+      SaveSystem.SavePlayer(gameObject);
       
    }
 

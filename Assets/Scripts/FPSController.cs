@@ -56,17 +56,6 @@ public class FPSController : PortalTraveller {
         animator.ResetTrigger("walk");
         animator.ResetTrigger("notWalk");
 
-        if (Input.GetKeyDown (KeyCode.P)) {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            Debug.Break ();
-        }
-        if (Input.GetKeyDown (KeyCode.O)) {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            disabled = !disabled;
-        }
-
         if (disabled) {
             return;
         }

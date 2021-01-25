@@ -5,19 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public static bool isContinue;
     public void NewGame()
     {
         StartCoroutine(LoadAsyncScene());
-        Debug.Log("new game");
     }
     public void ContinueGame()
     {
-       
-        Debug.Log("continue game");
+        isContinue = true;
+        StartCoroutine(LoadAsyncScene());
     }
     public void ExitGame()
     {
-        Debug.Log("exit");
         Application.Quit();
     }
     

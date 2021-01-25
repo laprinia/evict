@@ -26,6 +26,7 @@ public class LaserEnemy : PortalTraveller
     public float gravity = 18;
     public GameObject myself;
     public Animator animator;
+    public GameObject heart;
 
     float verticalVelocity;
     Vector3 velocity;
@@ -107,6 +108,7 @@ public class LaserEnemy : PortalTraveller
 
     IEnumerator Destroy(int interval) {
         yield return new WaitForSeconds(interval);
+        Instantiate(heart, new Vector3(0, .5f, 0) + this.transform.position, Quaternion.identity);
         Destroy(myself);
     }
 

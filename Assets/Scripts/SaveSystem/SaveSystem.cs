@@ -8,10 +8,11 @@ public class SaveSystem
 {
     private static string filePath = Application.persistentDataPath + "/playerData.txt";
 
-    public static void SavePlayer(Player player)
+    public static void SavePlayer(GameObject player)
     {
         BinaryFormatter formatter=new BinaryFormatter();
         FileStream fileStream=new FileStream(filePath,FileMode.Create);
+        Debug.Log("player data "+player.name);
         PlayerData data=new PlayerData(player);
         formatter.Serialize(fileStream,data);
         fileStream.Close();

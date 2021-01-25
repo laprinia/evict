@@ -7,12 +7,12 @@ public class PlayerData
     public int health;
     public float[] position;
 
-    public PlayerData(Player player)
+    public PlayerData(GameObject player)
     {
         health = player.GetComponent<Health>().curHealth;
-        Vector3 currentPosition=player.transform.position;
-        position[0] = currentPosition.x;
-        position[1] = currentPosition.y;
-        position[2] = currentPosition.z;
+        position=new float[3];
+        position[0] = player.transform.position.x;
+        position[1] = player.transform.position.y;
+        position[2] = player.transform.position.z;
     }
 }
