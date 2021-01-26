@@ -31,6 +31,8 @@ public class LaserEnemy : PortalTraveller
 
     public Rigidbody rb;
 
+    AudioSource audioSourceLaserSound;
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;
@@ -39,6 +41,7 @@ public class LaserEnemy : PortalTraveller
 
     private void Start()
     {
+        audioSourceLaserSound = this.gameObject.GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
         lastPosition = transform.position;
         lineRenderer.startWidth = 0.1f;
@@ -76,7 +79,8 @@ public class LaserEnemy : PortalTraveller
                     if (hit.collider && hit.transform.tag.Equals("Player")) {
                         lineRenderer.SetPosition(1, hit.point);
                         StartCoroutine(StopLaserCoroutine());
-                        hit.collider.gameObject.GetComponent<Health>().DamagePlayer(25);
+                        hit.collider.gameObject.GetComponent<Health>().DamagePlayer(25, this.gameObject);
+                        audioSourceLaserSound.Play();
                     }
                     attackTimeStamp = Time.time + attackCoolDown;
                 }

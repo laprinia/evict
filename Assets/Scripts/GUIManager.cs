@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GUIManager : MonoBehaviour
 {
-    public int scale = 1;
+    public float scale = 1;
     private static GUIManager _instance;
 
     public static GUIManager instance

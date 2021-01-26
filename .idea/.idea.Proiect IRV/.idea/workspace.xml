@@ -23,80 +23,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Proiect IRV/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Proiect IRV/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Proiect IRV/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Proiect IRV/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Health.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Health.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lava.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lava/Lava shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lava/Lava shader/Lava.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lava/Lava shader/Lava.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lava/Lava shader/Lava.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lava/Lava shader/Lava.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lava/Lava shader/Plane.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lava/Lava shader/Plane.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lava/Lava shader/wavesNormalMap.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lava/Lava shader/wavesNormalMap.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lava/Lava shader/wawesMap.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lava/Lava shader/wawesMap.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/source.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/source/Box.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/source/Box.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/source/Chain.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/source/Chain.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/source/FirstBoxSketchfab.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/source/FirstBoxSketchfab.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/source/OrbBox Animator.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/source/OrbBox Animator.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/source/Sphere.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/source/Sphere.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/source/Take 001.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/source/Take 001.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Box_AO.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Box_AO.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Box_BaseColor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Box_BaseColor.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Box_Emissive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Box_Emissive.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Box_Metallic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Box_Metallic.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Box_Normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Box_Normal.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Box_Roughness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Box_Roughness.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Chain_AO.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Chain_AO.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Chain_BaseColor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Chain_BaseColor.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Chain_Metallic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Chain_Metallic.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Chain_Normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Chain_Normal.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Chain_Roughness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Chain_Roughness.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Sphere_AO.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Sphere_AO.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Sphere_BaseColor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Sphere_BaseColor.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Sphere_Emissive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Sphere_Emissive.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Sphere_Metallic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Sphere_Metallic.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Sphere_Normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Sphere_Normal.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Sphere_Roughness.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Orb/textures/FirstBoxSubstance_Sphere_Roughness.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Nora Bot.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Nora Bot.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/OrbBox Variant.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/OrbBox Variant.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ralph Pack.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Ralph Pack.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Ovidiu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Ovidiu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CreatePortal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CreatePortal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Heart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Heart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FPSController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FPSController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LaserEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LaserEnemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainCamera.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/MeleeEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MeleeEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,16 +52,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/CreatePortal.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MainCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RangedEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Portal.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LaserEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveablePlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/PlayerData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/HealthBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Load.cs" />
@@ -135,6 +67,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/MeleeEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Heart.cs" />
         <option value="$PROJECT_DIR$/Assets/Health.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/FPSController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PauseMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GUIManager.cs" />
       </list>
     </option>
   </component>
@@ -150,6 +86,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/EVICT\Proiect IRV.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Lavinia\Desktop\EVICT" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -199,7 +143,8 @@
       <workItem from="1611433990642" duration="6311000" />
       <workItem from="1611596930336" duration="5329000" />
       <workItem from="1611609035399" duration="1563000" />
-      <workItem from="1611613041576" duration="2056000" />
+      <workItem from="1611613041576" duration="2698000" />
+      <workItem from="1611673481756" duration="564000" />
     </task>
     <servers />
   </component>

@@ -25,6 +25,7 @@ public class MeleeEnemy : PortalTraveller
     public Animator animator;
     public GameObject heart;
     public ParticleSystem fire;
+    AudioSource audioSourceMeleeSound;
 
     public Rigidbody rb;
 
@@ -36,6 +37,7 @@ public class MeleeEnemy : PortalTraveller
 
     private void Start()
     {
+        audioSourceMeleeSound = this.gameObject.GetComponent<AudioSource>();
         lastPosition = transform.position;
         rb = GetComponent<Rigidbody>();
     }
@@ -67,7 +69,8 @@ public class MeleeEnemy : PortalTraveller
             if (distance <= attackRadius && Time.time >= attackTimeStamp) {
                 Animator.SetTrigger("scanTrigger");
                 attackTimeStamp = Time.time + attackCoolDown;
-                target.GetComponent<Health>().DamagePlayer(25);
+                target.GetComponent<Health>().DamagePlayer(25, this.gameObject);
+                audioSourceMeleeSound.Play();
             }
         } else if (Time.time >= walkTimeStamp) {
             if (currentWaypoint == waypoints.Length) {

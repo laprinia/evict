@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
 
     private GameObject player;
     private bool canReceiveDamage = true;
+    public float knockBackForce = 10;
 
     void Start()
     {
@@ -30,8 +31,14 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void DamagePlayer(int damage) {
+    public void DamagePlayer(int damage, GameObject enemyHit = null) {
         if (curHealth > 0 && canReceiveDamage) {
+            if (enemyHit != null) {
+                Vector3 hurtDirection = (player.transform.position - enemyHit.transform.position).normalized;
+                Vector3 knockbackDirection = (hurtDirection + Vector3.up).normalized;
+                player.GetComponent<ForceReceiver>().AddForce(knockbackDirection, knockBackForce);
+            }
+
             curHealth -= damage;
 
             healthBar.SetHealth(curHealth);

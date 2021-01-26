@@ -90,7 +90,6 @@ public class FPSController : PortalTraveller {
         float mX = Input.GetAxisRaw ("Mouse X");
         float mY = Input.GetAxisRaw ("Mouse Y");
 
-        // Verrrrrry gross hack to stop camera swinging down at start
         float mMag = Mathf.Sqrt (mX * mX + mY * mY);
         if (mMag > 5) {
             mX = 0;

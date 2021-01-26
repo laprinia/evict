@@ -48,12 +48,14 @@
           <e p="CameraUtility.cs" t="Include" />
           <e p="CreatePortal.cs" t="Include" />
           <e p="DeadMenu.cs" t="Include" />
+          <e p="ForceReceiver.cs" t="Include" />
           <e p="FPSController.cs" t="Include" />
           <e p="GUIManager.cs" t="Include" />
           <e p="Heart.cs" t="Include" />
           <e p="LaserEnemy.cs" t="Include" />
           <e p="MainCamera.cs" t="Include" />
           <e p="MainMenu.cs" t="Include" />
+          <e p="MainMenuSound.cs" t="Include" />
           <e p="MeleeEnemy.cs" t="Include" />
           <e p="PauseMenu.cs" t="Include" />
           <e p="Player.cs" t="Include" />
@@ -70,6 +72,7 @@
             <e p="Slice.shader" t="Include" />
           </e>
           <e p="Teleport.cs" t="Include" />
+          <e p="WIN.cs" t="Include" />
         </e>
         <e p="Skyboxes" t="Include">
           <e p="ReadMe.txt" t="Include" />
