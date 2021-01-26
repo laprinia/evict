@@ -40,8 +40,12 @@ public class Health : MonoBehaviour
 
     public void HealPlayer(int heal)
     {
-        curHealth += heal;
-        healthBar.SetHealth(curHealth);
+        if (curHealth < maxHealth)
+        {
+            curHealth += heal;
+            healthBar.SetHealth(curHealth);
+        }
+       
     }
 
     public void SetHealth(int amount)

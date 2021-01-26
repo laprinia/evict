@@ -24,6 +24,7 @@ public class MeleeEnemy : PortalTraveller
     public GameObject myself;
     public Animator animator;
     public GameObject heart;
+    public ParticleSystem fire;
 
     public Rigidbody rb;
 
@@ -85,6 +86,7 @@ public class MeleeEnemy : PortalTraveller
 
     IEnumerator Destroy(int interval)
     {
+        fire.gameObject.SetActive(true);
         yield return new WaitForSeconds(interval);
         Instantiate(heart, new Vector3(0, .5f, 0) + transform.position, Quaternion.identity);
         Destroy(myself);

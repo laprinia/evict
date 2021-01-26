@@ -27,10 +27,9 @@ public class LaserEnemy : PortalTraveller
     public GameObject myself;
     public Animator animator;
     public GameObject heart;
+    public ParticleSystem fire;
 
-    float verticalVelocity;
-    Vector3 velocity;
-    CharacterController controller;
+    public Rigidbody rb;
 
     private void OnDrawGizmos()
     {
@@ -40,7 +39,7 @@ public class LaserEnemy : PortalTraveller
 
     private void Start()
     {
-        controller = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
         lastPosition = transform.position;
         lineRenderer.startWidth = 0.1f;
         lineRenderer.endWidth = 0.1f;
@@ -50,19 +49,12 @@ public class LaserEnemy : PortalTraveller
     private void Update()
     {
         animator.SetBool("isShutDown", false);
-        verticalVelocity -= gravity * Time.deltaTime;
-        velocity = new Vector3(0, verticalVelocity, 0);
 
-        var flags = controller.Move(velocity * Time.deltaTime);
-        if (flags == CollisionFlags.Below) {
-            if(verticalVelocity < -8) {
-                this.enabled = false;
-                animator.SetBool("isShutDown", true);
-                animator.SetFloat("speed", 0);
-                StartCoroutine(Destroy(5));
-
-            }
-            verticalVelocity = 0;
+        if (rb.velocity.y < -8) {
+            this.enabled = false;
+            animator.SetBool("isShutDown", true);
+            animator.SetFloat("speed", 0);
+            StartCoroutine(Destroy(5));
         }
 
         float distance = Vector3.Distance(target.position, transform.position);
@@ -107,6 +99,7 @@ public class LaserEnemy : PortalTraveller
     }
 
     IEnumerator Destroy(int interval) {
+        fire.gameObject.SetActive(true);
         yield return new WaitForSeconds(interval);
         Instantiate(heart, new Vector3(0, .5f, 0) + this.transform.position, Quaternion.identity);
         Destroy(myself);

@@ -7,6 +7,12 @@ public class CreatePortal : MonoBehaviour
     public GameObject leftClickPortal;
     public GameObject rightClickPortal;
     public GameObject player;
+    
+    AudioSource audioData;
+
+    private void Start() {
+        audioData = this.gameObject.GetComponent<AudioSource>();
+    }
 
     private void Update() {
         if (Input.GetMouseButtonDown(0)) {
@@ -24,6 +30,7 @@ public class CreatePortal : MonoBehaviour
     }
 
     void ShootPortalA(GameObject portal) {
+        audioData.Play();
         Ray rayOrigin = Camera.main.ViewportPointToRay(new Vector3(.5f, .5f, 0));
         RaycastHit hitInfo;
 
@@ -41,6 +48,7 @@ public class CreatePortal : MonoBehaviour
     }
 
     void ShootPortalB(GameObject portal) {
+        audioData.Play();
         Ray rayOrigin = Camera.main.ViewportPointToRay(new Vector3(.5f, .5f, 0));
         RaycastHit hitInfo;
 

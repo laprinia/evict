@@ -19,16 +19,18 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
-    
+
     IEnumerator LoadAsyncScene()
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Ovidiu");
-        
+
 
         while (!asyncLoad.isDone)
         {
             yield return null;
         }
     }
+
+    //
 }
 

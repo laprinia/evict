@@ -12,8 +12,9 @@ public class Heart : MonoBehaviour
         playerHealth = FindObjectOfType<Health>().gameObject;
     }
 
-    private void OnTriggerEnter(Collider other) {
-        playerHealth.GetComponent<Health>().SetHealth(playerHealth.GetComponent<Health>().curHealth + HP);
+    private void OnTriggerEnter(Collider other)
+    {
+        playerHealth.GetComponent<Health>().HealPlayer(HP);
         Destroy(this.gameObject);
     }
 }
