@@ -34,6 +34,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        Cursor.visible = false;
         saveMenuUI.SetActive(false);
         pauseMenuUI.SetActive(false);
         mainCamera.GetComponent<GUIManager>().enabled = true;

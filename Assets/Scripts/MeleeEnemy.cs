@@ -58,7 +58,8 @@ public class MeleeEnemy : PortalTraveller
 
 
         float distance = Vector3.Distance(target.position, transform.position);
-        if (distance <= viewRadius) {
+        float level = Mathf.Abs((target.position - transform.position).y);
+        if (distance <= viewRadius && level<1) {
             FaceTarget(target);
             if (distance >= 1) {
                 transform.position = Vector3.MoveTowards(transform.position, target.position,
