@@ -13,6 +13,6 @@ My contribution included:
 
 ![game screenshot](/demo/screenshot2.png "Final Point")
 
-![game screenshot](/demo/video.mp4 "Enemy Showcase")
+![game video](/demo/video.gif "Enemy Showcase")
 
-![game screenshot](/demo/video2.mp4 "Portal Showcase")
+![game video](/demo/video2.gif "Portal Showcase")
